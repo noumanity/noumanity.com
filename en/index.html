@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>noumanity - Nothing but proof.</title>
+  <meta name="description" content="noumanity DeepTech Studio is dedicated to fundamental research and the development of advanced technologies. Our main fields of work are Post-Quantum CyberSecurity, resilient strategic infrastructure, decentralized sovereign platforms, applications of Quantum-Like theory, Quantum Intelligence, the use of Artificial Intelligence in DeepTech research, theories of contextualized information (quantum-like, Grothendieck construction), and Bourdieu's theory of sociological fields.">
+  <meta name="author" content="Jérémy Viau-Trudel">
+  <meta name="theme-color" content="#111215">
+  <link rel="canonical" href="https://noumanity.com/en/">
+  <link rel="alternate" hreflang="fr" href="https://noumanity.com/">
+  <link rel="alternate" hreflang="en" href="https://noumanity.com/en/">
+  <link rel="alternate" hreflang="es" href="https://noumanity.com/es/">
+  <link rel="alternate" hreflang="pt" href="https://noumanity.com/pt/">
+  <link rel="alternate" hreflang="x-default" href="https://noumanity.com/">
+
+  <!-- Partage : Open Graph (LinkedIn, WhatsApp, Facebook) — vignette 1200x630 < 300 Ko (tools/build-og.sh) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="noumanity">
+  <meta property="og:locale" content="en_CA">
+  <meta property="og:locale:alternate" content="fr_CA">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:locale:alternate" content="pt_BR">
+  <meta property="og:url" content="https://noumanity.com/en/">
+  <meta property="og:title" content="noumanity - DeepTech Studio">
+  <meta property="og:description" content="noumanity DeepTech Studio is dedicated to fundamental research and the development of advanced technologies. Our main fields of work are Post-Quantum CyberSecurity, resilient strategic infrastructure, decentralized sovereign platforms, applications of Quantum-Like theory, Quantum Intelligence, the use of Artificial Intelligence in DeepTech research, theories of contextualized information (quantum-like, Grothendieck construction), and Bourdieu's theory of sociological fields.">
+  <meta property="og:image" content="https://noumanity.com/img/og-image.en.jpg">
+  <meta property="og:image:secure_url" content="https://noumanity.com/img/og-image.en.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt"
+    content="noumanity, DeepTech Studio — Nothing but proof. Portrait of Jérémy Viau-Trudel in front of a stone wall.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="noumanity - DeepTech Studio">
+  <meta name="twitter:description" content="noumanity DeepTech Studio is dedicated to fundamental research and the development of advanced technologies. Our main fields of work are Post-Quantum CyberSecurity, resilient strategic infrastructure, decentralized sovereign platforms, applications of Quantum-Like theory, Quantum Intelligence, the use of Artificial Intelligence in DeepTech research, theories of contextualized information (quantum-like, Grothendieck construction), and Bourdieu's theory of sociological fields.">
+  <meta name="twitter:image" content="https://noumanity.com/img/og-image.en.jpg">
+  <link rel="icon"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23111215'/%3E%3Ctext x='16' y='24' font-family='Arial,sans-serif' font-weight='700' font-size='24' text-anchor='middle' fill='%23FA4D1F'%3En%3C/text%3E%3C/svg%3E">
+
+  <script>
+    /* ?vignette : capture de la vignette de partage, sans sélecteur ni redirection.
+       Racine (langue par défaut) : sert la langue du navigateur, sauf choix mémorisé (sélecteur). */
+    (function () {
+      var h = document.documentElement;
+      if (/[?&]vignette\b/.test(location.search)) { h.className += " vignette"; return; }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Arimo:wght@400;700&display=swap">
+
+  <style>
+    :root {
+      /* Marque */
+      --orange-fusion: #FA4D1F;
+      --blanc: #FFFFFF;
+      /* Fondations minérales */
+      --basalte: #111215;
+      --anthracite: #1A1C20;
+      --graphite: #2E323A;
+      /* Chaleur humaine */
+      --tungstene: #D98351;
+      --terre-ombre: #3A2B25;
+      --sable: #EBE7E0;
+      /* Confiance */
+      --sauge: #2D4038;
+      --acier: #8C929D;
+
+      --font-titre: "Arimo", "Helvetica Neue", Arial, sans-serif;
+      --font-texte: "ABeeZee", "Helvetica Neue", Arial, sans-serif;
+
+      --gouttiere: 16px;
+      --taille-slogan: 1rem;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      background: var(--basalte);
+      color: var(--blanc);
+      font-family: var(--font-texte);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* ------------------------------------------------------------------
+       HERO — pleine page
+       Mobile d'abord (≤ 640px), puis tablette (641–1200px), puis grand écran
+       ------------------------------------------------------------------ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100svh;
+      overflow: hidden;
+      isolation: isolate;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      background-color: var(--basalte);
+      background-image: url("../img/wall-mobile.jpg");
+      background-image: image-set(url("../img/wall-mobile.webp") type("image/webp"), url("../img/wall-mobile.jpg") type("image/jpeg"));
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Voile : assombrit le mur pour la lisibilité, lueur chaude derrière le portrait */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(ellipse 70% 45% at 50% 100%, rgba(217, 131, 81, 0.22), transparent 70%),
+        linear-gradient(180deg, rgba(17, 18, 21, 0.55) 0%, rgba(17, 18, 21, 0.25) 45%, rgba(17, 18, 21, 0.7) 100%);
+    }
+
+    /* Projecteur : éclaire la pierre derrière le logo noir (screen éclaircit sans aplatir la texture du mur) */
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      background:
+        radial-gradient(ellipse var(--lumiere-taille) at var(--lumiere-x) var(--lumiere-y), rgba(235, 231, 224, 0.26), rgba(235, 231, 224, 0.1) 50%, transparent 80%),
+        radial-gradient(ellipse var(--lumiere-taille) at var(--lumiere-x) var(--lumiere-y), rgba(217, 131, 81, 0.14), transparent 65%);
+      --lumiere-x: 50%;
+      --lumiere-y: 26%;
+      --lumiere-taille: 95% 26%;
+    }
+
+    .hero__marque {
+      align-self: center;
+      padding: calc(48px + env(safe-area-inset-top)) var(--gouttiere) 24px;
+      width: 100%;
+      max-width: 520px;
+      margin-inline: auto;
+      animation: monter 900ms cubic-bezier(.2, .7, .2, 1) both;
+    }
+
+    .hero__surtitre {
+      margin: 0.1em 0 0.3em;
+      font-family: var(--font-titre);
+      /* 2× le slogan ; plafonné en vw pour tenir sur une ligne sur très petit écran */
+      font-size: min(calc(2 * var(--taille-slogan)), 8.6vw);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      text-transform: uppercase;
+      color: var(--sable);
+    }
+
+    .hero__titre {
+      margin: 0;
+      line-height: 0;
+    }
+
+    /* Lettres noires en contre-jour : halo diffus derrière, sans liseré sur les contours */
+    .hero__logo {
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 0 22px rgba(235, 231, 224, 0.28));
+    }
+
+    .hero__slogan {
+      margin: 0;
+      font-family: var(--font-texte);
+      font-size: var(--taille-slogan);
+      line-height: 1.3;
+      letter-spacing: 0.02em;
+      color: var(--sable);
+      display: flex;
+      align-items: center;
+      gap: 0.75em;
+    }
+
+    .hero__slogan::before {
+      content: "";
+      flex: none;
+      width: 1.75em;
+      height: 2px;
+      background: var(--orange-fusion);
+    }
+
+    .hero__portrait {
+      align-self: end;
+      justify-self: center;
+      width: min(88vw, 52svh, 480px);
+      animation: apparaitre 1200ms 150ms ease-out both;
+    }
+
+    .hero__portrait img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+      /* fond le bas du buste dans le mur et adoucit la coupe droite de la veste */
+      -webkit-mask-image: linear-gradient(180deg, #000 82%, transparent 100%), linear-gradient(270deg, transparent 0%, #000 10%);
+      mask-image: linear-gradient(180deg, #000 82%, transparent 100%), linear-gradient(270deg, transparent 0%, #000 10%);
+      -webkit-mask-composite: source-in;
+      mask-composite: intersect;
+      filter: drop-shadow(0 0 40px rgba(17, 18, 21, 0.6));
+    }
+
+    @keyframes monter {
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    @keyframes apparaitre {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Téléphone : portrait agrandi jusqu'au bas de l'écran, rogné sur les côtés
+       (la source décale le visage à droite : on le recentre) ; texte au-dessus */
+    @media (max-width: 640px) {
+      .hero { grid-template-columns: 100%; } /* le portrait déborde sans élargir la colonne */
+      .hero__marque { position: relative; z-index: 1; }
+      .hero__portrait {
+        width: min(118vw, 58svh, 560px);
+        transform: translateX(-6%);
+      }
+    }
+
+    /* --------------------------- Tablette ---------------------------- */
+    @media (min-width: 641px) {
+      :root {
+        --gouttiere: clamp(32px, 6vw, 72px);
+      }
+
+      .hero {
+        background-image: url("../img/wall-tablet.jpg");
+        background-image: image-set(url("../img/wall-tablet.webp") type("image/webp"), url("../img/wall-tablet.jpg") type("image/jpeg"));
+      }
+
+      .hero__marque {
+        max-width: 640px;
+        --taille-slogan: 1.125rem;
+      }
+
+      .hero__surtitre {
+        letter-spacing: 0.14em;
+      }
+
+      .hero__portrait {
+        width: min(70vw, 56svh, 640px);
+      }
+    }
+
+    /* Tablette paysage et grand écran : 2/3 marque — 1/3 portrait */
+    @media (min-width: 900px) and (orientation: landscape),
+    (min-width: 1201px) {
+
+      /* Marge latérale : rapproche marque et portrait du centre */
+      .hero {
+        grid-template-rows: none;
+        grid-template-columns: 2fr 1fr;
+        padding-inline: 6vw;
+      }
+
+      .hero::before {
+        background:
+          radial-gradient(ellipse 45% 70% at 78% 100%, rgba(217, 131, 81, 0.2), transparent 70%),
+          linear-gradient(90deg, rgba(17, 18, 21, 0.7) 0%, rgba(17, 18, 21, 0.35) 55%, rgba(17, 18, 21, 0.15) 100%);
+      }
+
+      .hero::after {
+        --lumiere-x: 36%;
+        --lumiere-y: 48%;
+        --lumiere-taille: 42% 34%;
+      }
+
+      .hero__marque {
+        margin: 0;
+        max-width: none;
+        padding: var(--gouttiere);
+        padding-right: 0;
+      }
+
+      .hero__logo {
+        width: min(100%, 44vw);
+      }
+
+      /* Décollé du bord droit : la coupe de la veste (source) est fondue à droite ;
+         déborde vers la gauche pour garder de la présence */
+      .hero__portrait {
+        width: 140%;
+        max-width: min(96svh, 140%);
+        justify-self: end;
+      }
+
+      .hero__portrait img {
+        -webkit-mask-image: linear-gradient(180deg, #000 88%, transparent 100%), linear-gradient(270deg, transparent 0%, #000 12%);
+        mask-image: linear-gradient(180deg, #000 88%, transparent 100%), linear-gradient(270deg, transparent 0%, #000 12%);
+      }
+    }
+
+    /* -------------------------- Grand écran -------------------------- */
+    @media (min-width: 1201px) {
+      :root {
+        --gouttiere: clamp(72px, 7vw, 160px);
+      }
+
+      .hero {
+        background-image: url("../img/wall-desktop.jpg");
+        background-image: image-set(url("../img/wall-desktop.webp") type("image/webp"), url("../img/wall-desktop.jpg") type("image/jpeg"));
+      }
+
+      .hero__logo {
+        width: min(100%, 42vw, 900px);
+      }
+
+      .hero__marque {
+        --taille-slogan: clamp(1.125rem, 1.15vw, 1.5rem);
+      }
+
+      .hero__portrait {
+        width: 125%;
+        max-width: min(96svh, 125%);
+      }
+    }
+
+    /* Sélecteur de langue : icône globe en haut à droite, la liste se déploie vers la gauche
+       au survol (souris) ; au clavier et au toucher, le bouton bascule data-ouvert */
+    .langues {
+      position: absolute;
+      top: calc(8px + env(safe-area-inset-top));
+      right: calc(var(--gouttiere) - 8px);
+      z-index: 1;
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      font-family: var(--font-titre);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+    }
+
+    .langues__icone {
+      display: grid;
+      place-items: center;
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: transparent;
+      color: var(--acier);
+      cursor: pointer;
+      transition: color 150ms;
+    }
+
+    .langues__icone svg { width: 20px; height: 20px; }
+
+    .langues__liste {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      max-width: 0;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      /* repli : la liste disparaît (visibility) une fois l'animation finie → liens hors tabulation */
+      transition: max-width 250ms ease, opacity 200ms ease, visibility 0s linear 250ms;
+    }
+
+    .langues[data-ouvert] .langues__liste {
+      max-width: 12rem;
+      opacity: 1;
+      visibility: visible;
+      transition: max-width 250ms ease, opacity 200ms ease 50ms, visibility 0s;
+    }
+
+    @media (hover: hover) {
+      .langues:hover .langues__liste {
+        max-width: 12rem;
+        opacity: 1;
+        visibility: visible;
+        transition: max-width 250ms ease, opacity 200ms ease 50ms, visibility 0s;
+      }
+
+      .langues:hover .langues__icone { color: var(--sable); }
+    }
+
+    .langues__liste a {
+      display: block;
+      padding: 8px;
+      color: var(--acier);
+      text-decoration: none;
+      transition: color 150ms;
+    }
+
+    .langues__liste a:hover,
+    .langues__liste a:focus-visible,
+    .langues__icone:focus-visible,
+    .langues[data-ouvert] .langues__icone { color: var(--sable); }
+
+    .langues a:focus-visible,
+    .langues__icone:focus-visible { outline: 2px solid var(--orange-fusion); outline-offset: -2px; }
+
+    .langues a[aria-current] {
+      color: var(--sable);
+      box-shadow: inset 0 -2px 0 var(--orange-fusion);
+    }
+
+    .vignette .langues { display: none; }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .hero__marque,
+      .hero__portrait {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <section class="hero" aria-label="noumanity">
+      <div class="hero__marque">
+        <h1 class="hero__titre">
+          <img class="hero__logo" src="../img/noumanity-logo.svg" alt="noumanity" width="284" height="49">
+        </h1>
+        <p class="hero__surtitre">DeepTech Studio</p>
+        <p class="hero__slogan">Nothing but proof.</p>
+      </div>
+
+      <picture class="hero__portrait">
+        <source type="image/webp"
+          srcset="../img/portrait-mobile.webp 480w, ../img/portrait-tablet.webp 720w, ../img/portrait-desktop.webp 1024w"
+          sizes="(max-width: 640px) min(88vw, 480px), (max-width: 1200px) 40vw, 40vw">
+        <img src="../img/portrait-tablet.png" alt="Portrait of Jérémy Viau-Trudel" width="720" height="720"
+          fetchpriority="high">
+      </picture>
+      <nav class="langues" aria-label="Language">
+        <button class="langues__icone" type="button" aria-expanded="false" aria-controls="langues-liste">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/>
+          </svg>
+          <span class="sr-only">Language : English</span>
+        </button>
+        <ul class="langues__liste" id="langues-liste">
+          <li><a href="../" hreflang="fr" lang="fr"><span aria-hidden="true">FR</span><span class="sr-only">Français</span></a></li>
+          <li><a href="../en/" hreflang="en" lang="en" aria-current="page"><span aria-hidden="true">EN</span><span class="sr-only">English</span></a></li>
+          <li><a href="../es/" hreflang="es" lang="es"><span aria-hidden="true">ES</span><span class="sr-only">Español</span></a></li>
+          <li><a href="../pt/" hreflang="pt" lang="pt"><span aria-hidden="true">PT</span><span class="sr-only">Português</span></a></li>
+        </ul>
+      </nav>
+    </section>
+  </main>
+  <script>
+    /* Sélecteur de langue : mémorise le choix (lu par la racine) ; bouton = ouverture au clavier / toucher */
+    (function () {
+      var nav = document.querySelector(".langues"), bouton = nav.querySelector("button");
+      function ouvrir(oui) {
+        if (oui) nav.setAttribute("data-ouvert", ""); else nav.removeAttribute("data-ouvert");
+        bouton.setAttribute("aria-expanded", oui);
+      }
+      bouton.addEventListener("click", function () { ouvrir(!nav.hasAttribute("data-ouvert")); });
+      nav.addEventListener("click", function (e) {
+        var a = e.target.closest("a[hreflang]");
+        if (a) try { localStorage.setItem("langue", a.hreflang); } catch (err) {}
+      });
+      document.addEventListener("click", function (e) { if (!nav.contains(e.target)) ouvrir(false); });
+      nav.addEventListener("focusout", function (e) { if (!nav.contains(e.relatedTarget)) ouvrir(false); });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && nav.contains(document.activeElement)) { ouvrir(false); bouton.focus(); }
+      });
+    })();
+  </script>
+</body>
+
+</html>
