@@ -37,6 +37,7 @@
       --font-texte: "ABeeZee", "Helvetica Neue", Arial, sans-serif;
 
       --gouttiere: 16px;
+      --taille-slogan: 1rem;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
@@ -89,6 +90,22 @@
         linear-gradient(180deg, rgba(17, 18, 21, 0.55) 0%, rgba(17, 18, 21, 0.25) 45%, rgba(17, 18, 21, 0.7) 100%);
     }
 
+    /* Projecteur : éclaire la pierre derrière le logo noir (screen éclaircit sans aplatir la texture du mur) */
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      mix-blend-mode: screen;
+      background:
+        radial-gradient(ellipse var(--lumiere-taille) at var(--lumiere-x) var(--lumiere-y), rgba(235, 231, 224, 0.26), rgba(235, 231, 224, 0.1) 50%, transparent 80%),
+        radial-gradient(ellipse var(--lumiere-taille) at var(--lumiere-x) var(--lumiere-y), rgba(217, 131, 81, 0.14), transparent 65%);
+      --lumiere-x: 50%;
+      --lumiere-y: 26%;
+      --lumiere-taille: 95% 26%;
+    }
+
     .hero__marque {
       align-self: center;
       padding: calc(48px + env(safe-area-inset-top)) var(--gouttiere) 24px;
@@ -98,14 +115,33 @@
       animation: monter 900ms cubic-bezier(.2, .7, .2, 1) both;
     }
 
+    .hero__surtitre {
+      margin: 0.1em 0 0.3em;
+      font-family: var(--font-titre);
+      /* 2× le slogan ; plafonné en vw pour tenir sur une ligne sur très petit écran */
+      font-size: min(calc(2 * var(--taille-slogan)), 8.6vw);
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      text-transform: uppercase;
+      color: var(--sable);
+    }
+
     .hero__titre { margin: 0; line-height: 0; }
 
-    .hero__logo { width: 100%; height: auto; }
+    /* Lettres noires en contre-jour : halo diffus derrière, sans liseré sur les contours */
+    .hero__logo {
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(0 0 22px rgba(235, 231, 224, 0.28));
+    }
 
     .hero__slogan {
-      margin: 0.4em 0 0;
+      margin: 0;
       font-family: var(--font-texte);
-      font-size: 1rem;
+      font-size: var(--taille-slogan);
+      line-height: 1.3;
       letter-spacing: 0.02em;
       color: var(--sable);
       display: flex;
@@ -158,22 +194,30 @@
         background-image: image-set(url("img/wall-tablet.webp") type("image/webp"), url("img/wall-tablet.jpg") type("image/jpeg"));
       }
 
-      .hero__marque { max-width: 640px; }
-      .hero__slogan { font-size: 1.125rem; }
+      .hero__marque { max-width: 640px; --taille-slogan: 1.125rem; }
+      .hero__surtitre { letter-spacing: 0.14em; }
       .hero__portrait { width: min(70vw, 56svh, 640px); }
     }
 
     /* Tablette paysage et grand écran : 2/3 marque — 1/3 portrait */
     @media (min-width: 900px) and (orientation: landscape), (min-width: 1201px) {
+      /* Marge latérale : rapproche marque et portrait du centre */
       .hero {
         grid-template-rows: none;
         grid-template-columns: 2fr 1fr;
+        padding-inline: 6vw;
       }
 
       .hero::before {
         background:
-          radial-gradient(ellipse 45% 70% at 84% 100%, rgba(217, 131, 81, 0.2), transparent 70%),
+          radial-gradient(ellipse 45% 70% at 78% 100%, rgba(217, 131, 81, 0.2), transparent 70%),
           linear-gradient(90deg, rgba(17, 18, 21, 0.7) 0%, rgba(17, 18, 21, 0.35) 55%, rgba(17, 18, 21, 0.15) 100%);
+      }
+
+      .hero::after {
+        --lumiere-x: 36%;
+        --lumiere-y: 48%;
+        --lumiere-taille: 42% 34%;
       }
 
       .hero__marque {
@@ -185,7 +229,7 @@
 
       .hero__logo { width: min(100%, 44vw); }
 
-      /* Collé au bord droit (la veste y est coupée dans la source) ;
+      /* Décollé du bord droit : la coupe de la veste (source) est fondue à droite ;
          déborde vers la gauche pour garder de la présence */
       .hero__portrait {
         width: 140%;
@@ -194,8 +238,8 @@
       }
 
       .hero__portrait img {
-        -webkit-mask-image: linear-gradient(180deg, #000 88%, transparent 100%);
-                mask-image: linear-gradient(180deg, #000 88%, transparent 100%);
+        -webkit-mask-image: linear-gradient(180deg, #000 88%, transparent 100%), linear-gradient(270deg, transparent 0%, #000 12%);
+                mask-image: linear-gradient(180deg, #000 88%, transparent 100%), linear-gradient(270deg, transparent 0%, #000 12%);
       }
     }
 
@@ -209,7 +253,7 @@
       }
 
       .hero__logo { width: min(100%, 42vw, 900px); }
-      .hero__slogan { font-size: clamp(1.125rem, 1.15vw, 1.5rem); }
+      .hero__marque { --taille-slogan: clamp(1.125rem, 1.15vw, 1.5rem); }
 
       .hero__portrait {
         width: 125%;
@@ -229,6 +273,7 @@
         <h1 class="hero__titre">
           <img class="hero__logo" src="img/noumanity-logo.svg" alt="noumanity" width="284" height="49">
         </h1>
+        <p class="hero__surtitre">Studio DeepTech</p>
         <p class="hero__slogan">Que de la preuve.</p>
       </div>
 
