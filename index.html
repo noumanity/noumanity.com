@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>noumanity — Que de la preuve.</title>
+  <meta name="description" content="noumanity — DeepTech. Que de la preuve.">
+  <meta name="theme-color" content="#111215">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="noumanity">
+  <meta property="og:description" content="Que de la preuve.">
+  <meta property="og:image" content="https://noumanity.com/img/wall-desktop.jpg">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23111215'/%3E%3Ctext x='16' y='24' font-family='Arial,sans-serif' font-weight='700' font-size='24' text-anchor='middle' fill='%23FA4D1F'%3En%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=ABeeZee&family=Arimo:wght@400;700&display=swap">
+
+  <style>
+    :root {
+      /* Marque */
+      --orange-fusion: #FA4D1F;
+      --blanc: #FFFFFF;
+      /* Fondations minérales */
+      --basalte: #111215;
+      --anthracite: #1A1C20;
+      --graphite: #2E323A;
+      /* Chaleur humaine */
+      --tungstene: #D98351;
+      --terre-ombre: #3A2B25;
+      --sable: #EBE7E0;
+      /* Confiance */
+      --sauge: #2D4038;
+      --acier: #8C929D;
+
+      --font-titre: "Arimo", "Helvetica Neue", Arial, sans-serif;
+      --font-texte: "ABeeZee", "Helvetica Neue", Arial, sans-serif;
+
+      --gouttiere: 16px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; }
+
+    body {
+      margin: 0;
+      background: var(--basalte);
+      color: var(--blanc);
+      font-family: var(--font-texte);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; height: auto; }
+
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+    }
+
+    /* ------------------------------------------------------------------
+       HERO — pleine page
+       Mobile d'abord (≤ 640px), puis tablette (641–1200px), puis grand écran
+       ------------------------------------------------------------------ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      min-height: 100svh;
+      overflow: hidden;
+      isolation: isolate;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      background-color: var(--basalte);
+      background-image: url("img/wall-mobile.jpg");
+      background-image: image-set(url("img/wall-mobile.webp") type("image/webp"), url("img/wall-mobile.jpg") type("image/jpeg"));
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Voile : assombrit le mur pour la lisibilité, lueur chaude derrière le portrait */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(ellipse 70% 45% at 50% 100%, rgba(217, 131, 81, 0.22), transparent 70%),
+        linear-gradient(180deg, rgba(17, 18, 21, 0.55) 0%, rgba(17, 18, 21, 0.25) 45%, rgba(17, 18, 21, 0.7) 100%);
+    }
+
+    .hero__marque {
+      align-self: center;
+      padding: calc(48px + env(safe-area-inset-top)) var(--gouttiere) 24px;
+      width: 100%;
+      max-width: 520px;
+      margin-inline: auto;
+      animation: monter 900ms cubic-bezier(.2, .7, .2, 1) both;
+    }
+
+    .hero__titre { margin: 0; line-height: 0; }
+
+    .hero__logo { width: 100%; height: auto; }
+
+    .hero__slogan {
+      margin: 0.9em 0 0;
+      font-family: var(--font-texte);
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+      color: var(--sable);
+      display: flex;
+      align-items: center;
+      gap: 0.75em;
+    }
+
+    .hero__slogan::before {
+      content: "";
+      flex: none;
+      width: 1.75em;
+      height: 2px;
+      background: var(--orange-fusion);
+    }
+
+    .hero__portrait {
+      align-self: end;
+      justify-self: center;
+      width: min(88vw, 52svh, 480px);
+      animation: apparaitre 1200ms 150ms ease-out both;
+    }
+
+    .hero__portrait img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1;
+      /* fond le bas du buste dans le mur et adoucit la coupe droite de la veste */
+      -webkit-mask-image: linear-gradient(180deg, #000 82%, transparent 100%), linear-gradient(270deg, transparent 0%, #000 10%);
+              mask-image: linear-gradient(180deg, #000 82%, transparent 100%), linear-gradient(270deg, transparent 0%, #000 10%);
+      -webkit-mask-composite: source-in;
+              mask-composite: intersect;
+      filter: drop-shadow(0 0 40px rgba(17, 18, 21, 0.6));
+    }
+
+    @keyframes monter {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: none; }
+    }
+    @keyframes apparaitre {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+
+    /* --------------------------- Tablette ---------------------------- */
+    @media (min-width: 641px) {
+      :root { --gouttiere: clamp(32px, 6vw, 72px); }
+
+      .hero {
+        background-image: url("img/wall-tablet.jpg");
+        background-image: image-set(url("img/wall-tablet.webp") type("image/webp"), url("img/wall-tablet.jpg") type("image/jpeg"));
+      }
+
+      .hero__marque { max-width: 640px; }
+      .hero__slogan { font-size: 1.125rem; }
+      .hero__portrait { width: min(70vw, 56svh, 640px); }
+    }
+
+    /* Tablette paysage et grand écran : 2/3 marque — 1/3 portrait */
+    @media (min-width: 900px) and (orientation: landscape), (min-width: 1201px) {
+      .hero {
+        grid-template-rows: none;
+        grid-template-columns: 2fr 1fr;
+      }
+
+      .hero::before {
+        background:
+          radial-gradient(ellipse 45% 70% at 84% 100%, rgba(217, 131, 81, 0.2), transparent 70%),
+          linear-gradient(90deg, rgba(17, 18, 21, 0.7) 0%, rgba(17, 18, 21, 0.35) 55%, rgba(17, 18, 21, 0.15) 100%);
+      }
+
+      .hero__marque {
+        margin: 0;
+        max-width: none;
+        padding: var(--gouttiere);
+        padding-right: 0;
+      }
+
+      .hero__logo { width: min(100%, 44vw); }
+
+      /* Collé au bord droit (la veste y est coupée dans la source) ;
+         déborde vers la gauche pour garder de la présence */
+      .hero__portrait {
+        width: 140%;
+        max-width: min(96svh, 140%);
+        justify-self: end;
+      }
+
+      .hero__portrait img {
+        -webkit-mask-image: linear-gradient(180deg, #000 88%, transparent 100%);
+                mask-image: linear-gradient(180deg, #000 88%, transparent 100%);
+      }
+    }
+
+    /* -------------------------- Grand écran -------------------------- */
+    @media (min-width: 1201px) {
+      :root { --gouttiere: clamp(72px, 7vw, 160px); }
+
+      .hero {
+        background-image: url("img/wall-desktop.jpg");
+        background-image: image-set(url("img/wall-desktop.webp") type("image/webp"), url("img/wall-desktop.jpg") type("image/jpeg"));
+      }
+
+      .hero__logo { width: min(100%, 42vw, 900px); }
+      .hero__slogan { font-size: clamp(1.125rem, 1.15vw, 1.5rem); }
+
+      .hero__portrait {
+        width: 125%;
+        max-width: min(96svh, 125%);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero__marque, .hero__portrait { animation: none; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero" aria-label="noumanity">
+      <div class="hero__marque">
+        <h1 class="hero__titre">
+          <img class="hero__logo" src="img/noumanity-logo.svg" alt="noumanity" width="284" height="49">
+        </h1>
+        <p class="hero__slogan">Que de la preuve.</p>
+      </div>
+
+      <picture class="hero__portrait">
+        <source type="image/webp"
+                srcset="img/portrait-mobile.webp 480w, img/portrait-tablet.webp 720w, img/portrait-desktop.webp 1024w"
+                sizes="(max-width: 640px) min(88vw, 480px), (max-width: 1200px) 40vw, 40vw">
+        <img src="img/portrait-tablet.png" alt="Portrait de Jérémy Viau-Trudel" width="720" height="720" fetchpriority="high">
+      </picture>
+    </section>
+  </main>
+</body>
+</html>
